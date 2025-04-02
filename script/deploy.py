@@ -1,12 +1,13 @@
-from src import Counter
-from moccasin.boa_tools import VyperContract
+from contracts import myToken
+from eth_utils import to_wei
 
-def deploy() -> VyperContract:
-    counter: VyperContract = Counter.deploy()
-    print("Starting count: ", counter.number())
-    counter.increment()
-    print("Ending count: ", counter.number())
-    return counter
+INITIAL_SUPPLY = to_wei(1000, "ether")
 
-def moccasin_main() -> VyperContract:
+def deploy():
+    snek_contract = myToken.deploy(INITIAL_SUPPLY)
+    print(f"Token deployed at address: {snek_contract.address}")
+    print(f"Token deployed with initial supply: {INITIAL_SUPPLY} wei")
+
+
+def moccasin_main():
     return deploy()
