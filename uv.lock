@@ -832,6 +832,21 @@ wheels = [
 ]
 
 [[package]]
+name = "mamushi"
+version = "0.0.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click" },
+    { name = "lark" },
+    { name = "mypy-extensions" },
+    { name = "pathspec" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/db/3f/e8a9afe7b0a6cccf079e517698bdd0ed31ec9ba8315210735e3ea1f48ee4/mamushi-0.0.4.tar.gz", hash = "sha256:b1889ed3acf8d58c4a348237f47f79f5447e4f1fa1fe8435f4613095dc6381ad", size = 45758 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/77/77/e27c6cd0a3340a437c64465c3bd31e984650008e7fa4f564b431f97d8288/mamushi-0.0.4-py3-none-any.whl", hash = "sha256:fa4e0160cb6323f7c4336ec8ec057ab0dbe5fd22866217c7cf9093add935d178", size = 48169 },
+]
+
+[[package]]
 name = "markdown"
 version = "3.7"
 source = { registry = "https://pypi.org/simple" }
@@ -1026,11 +1041,24 @@ name = "moccasin-project"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "mamushi" },
     { name = "moccasin" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "moccasin", specifier = ">=0.3.8" }]
+requires-dist = [
+    { name = "mamushi", specifier = ">=0.0.4" },
+    { name = "moccasin", specifier = ">=0.3.8" },
+]
+
+[[package]]
+name = "mypy-extensions"
+version = "0.4.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/63/60/0582ce2eaced55f65a4406fc97beba256de4b7a95a0034c6576458c6519f/mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8", size = 4252 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5c/eb/975c7c080f3223a5cdaff09612f3a5221e4ba534f7039db34c35d95fa6a5/mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d", size = 4470 },
+]
 
 [[package]]
 name = "nest-asyncio"
